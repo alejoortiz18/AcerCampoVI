@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AcercampoVI.Models.BD.VehiculoE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaSoat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaTecicomecanica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CapacidadVehiculo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoTransporte.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioXRol.IdUsuarioXRol)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaSoat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaTecicomecanica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CapacidadVehiculo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoTransporte.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioXRol.IdUsuarioXRol)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdVehiculo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdVehiculo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdVehiculo })
+        </td>
+    </tr>
+}
+
+</table>

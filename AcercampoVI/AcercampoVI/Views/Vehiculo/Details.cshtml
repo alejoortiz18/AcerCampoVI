@@ -1,0 +1,66 @@
+﻿@model AcercampoVI.Models.BD.VehiculoE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VehiculoE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaSoat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSoat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTecicomecanica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaTecicomecanica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacidadVehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacidadVehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTransporte.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoTransporte.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioXRol.IdUsuarioXRol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioXRol.IdUsuarioXRol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdVehiculo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

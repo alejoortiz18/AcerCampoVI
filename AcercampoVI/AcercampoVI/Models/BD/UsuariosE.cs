@@ -11,7 +11,8 @@ namespace AcercampoVI.Models.BD
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UsuariosE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,6 +26,8 @@ namespace AcercampoVI.Models.BD
         public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyy}")]
         public Nullable<System.DateTime> FechaNacimientos { get; set; }
         public string Identificacion { get; set; }
         public string Correo { get; set; }

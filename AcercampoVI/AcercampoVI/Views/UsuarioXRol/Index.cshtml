@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AcercampoVI.Models.BD.UsuarioXRolE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Rol.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Nombre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rol.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdUsuarioXRol }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdUsuarioXRol }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdUsuarioXRol })
+        </td>
+    </tr>
+}
+
+</table>

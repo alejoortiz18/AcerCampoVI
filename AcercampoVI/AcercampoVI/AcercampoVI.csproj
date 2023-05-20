@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -171,10 +173,64 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\TipoProductoController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Controllers\UsuarioXRolController.cs" />
+    <Compile Include="Controllers\VehiculoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BD\AcercampoEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcercampoEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\AcercampoEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\AcercampoEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcercampoEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\DetalleE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\FacturaE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\ProductoE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\RolE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\RutaE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\sysdiagrams.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\TipoProductoE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\TipoTransporteE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\UsuariosE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\UsuarioXRolE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BD\VehiculoE.cs">
+      <DependentUpon>AcercampoEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,8 +245,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\BD\AcercampoEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AcercampoEntities.edmx</DependentUpon>
+      <LastGenOutput>AcercampoEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BD\AcercampoEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AcercampoEntities.edmx</DependentUpon>
+      <LastGenOutput>AcercampoEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\BD\AcercampoEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AcercampoEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BD\AcercampoEntities.edmx.diagram">
+      <DependentUpon>AcercampoEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -236,6 +309,36 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Rol\Create.cshtml" />
+    <Content Include="Views\Rol\Delete.cshtml" />
+    <Content Include="Views\Rol\Details.cshtml" />
+    <Content Include="Views\Rol\Edit.cshtml" />
+    <Content Include="Views\Rol\Index.cshtml" />
+    <Content Include="Views\Vehiculo\Create.cshtml" />
+    <Content Include="Views\Vehiculo\Delete.cshtml" />
+    <Content Include="Views\Vehiculo\Details.cshtml" />
+    <Content Include="Views\Vehiculo\Edit.cshtml" />
+    <Content Include="Views\Vehiculo\Index.cshtml" />
+    <Content Include="Views\Producto\Create.cshtml" />
+    <Content Include="Views\Producto\Delete.cshtml" />
+    <Content Include="Views\Producto\Details.cshtml" />
+    <Content Include="Views\Producto\Edit.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\TipoProducto\Create.cshtml" />
+    <Content Include="Views\TipoProducto\Delete.cshtml" />
+    <Content Include="Views\TipoProducto\Details.cshtml" />
+    <Content Include="Views\TipoProducto\Edit.cshtml" />
+    <Content Include="Views\TipoProducto\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\UsuarioXRol\Create.cshtml" />
+    <Content Include="Views\UsuarioXRol\Delete.cshtml" />
+    <Content Include="Views\UsuarioXRol\Details.cshtml" />
+    <Content Include="Views\UsuarioXRol\Edit.cshtml" />
+    <Content Include="Views\UsuarioXRol\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -252,6 +355,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

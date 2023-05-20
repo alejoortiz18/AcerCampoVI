@@ -1,0 +1,72 @@
+﻿@model AcercampoVI.Models.BD.VehiculoE
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VehiculoE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaSoat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSoat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaTecicomecanica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaTecicomecanica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CapacidadVehiculo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CapacidadVehiculo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoTransporte.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoTransporte.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioXRol.IdUsuarioXRol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioXRol.IdUsuarioXRol)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
