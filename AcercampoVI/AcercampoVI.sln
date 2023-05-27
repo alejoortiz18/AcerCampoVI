@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33205.214
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcercampoVI", "AcercampoVI\AcercampoVI.csproj", "{669B0CCB-D40F-4C4D-9FA7-42EAE51ADE9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{C0FBEB32-BE7F-42EB-ABBB-AFFC035559A4}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Pictures\Acercampo\FRUTAS.jpg = ..\..\..\..\Pictures\Acercampo\FRUTAS.jpg
+		..\..\..\..\Pictures\Acercampo\horizonte.jpeg = ..\..\..\..\Pictures\Acercampo\horizonte.jpeg
+		..\..\..\..\Pictures\Acercampo\lechuga.jpg = ..\..\..\..\Pictures\Acercampo\lechuga.jpg
+		..\..\..\..\Pictures\Acercampo\tarde.jpeg = ..\..\..\..\Pictures\Acercampo\tarde.jpeg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
