@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57dde3aa49a9487f826144767ccc3710" Name="Diagram1">
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.DetalleE" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.FacturaE" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.ProductoE" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.RolE" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.RutaE" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.TipoProductoE" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.TipoTransporteE" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.UsuariosE" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.UsuarioXRolE" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ACERCAMPOVIModel.VehiculoE" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Detalle_Factura" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Detalle_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Producto_TipoProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Producto_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_UsuarioXRol_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Ruta_UsuarioXRol" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Ruta_Vehiculo" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_Vehiculo_TipoTransporte" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.FK_UsuarioXRol_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ACERCAMPOVIModel.ClienteXFactura" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

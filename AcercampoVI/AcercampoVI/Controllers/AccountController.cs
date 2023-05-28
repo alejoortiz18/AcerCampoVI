@@ -9,17 +9,26 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AcercampoVI.Models;
+using AcercampoVI.Models.BD;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 
 namespace AcercampoVI.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
+        private ACERCAMPOVIEntities _sqlDB = new ACERCAMPOVIEntities();
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private string _context;
 
         public AccountController()
         {
+            //
+            _context = "Data Source=DESKTOP-PK3SEMO\\SQLEXPRESS; Initial Catalog=ACERCAMPOVI;Integrated Security=True";
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -68,27 +77,37 @@ namespace AcercampoVI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            int IdUsuairo = 0;
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
-            // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
-            // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            UsuariosE usuario = _sqlDB.Usuarios.Select(x => x).Where(x => x.Correo == model.Email && x.Contrasena == model.Password).FirstOrDefault();
+            if (usuario == null)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
-                    return View(model);
+                ViewBag.error = "Usuario o contraseña inválido";
+                return View();
             }
+            UsuariosE oUser = usuario;
+            Session["User"] = oUser;
+
+            //// No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
+            //// Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            //switch (result)
+            //{
+            //    case SignInStatus.Success:
+            //        return RedirectToLocal(returnUrl);
+            //    case SignInStatus.LockedOut:
+            //        return View("Lockout");
+            //    case SignInStatus.RequiresVerification:
+            //        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+            //    case SignInStatus.Failure:
+            //    default:
+            //        ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
+            return RedirectToAction("Index", "Home");
+            //}
         }
 
         //

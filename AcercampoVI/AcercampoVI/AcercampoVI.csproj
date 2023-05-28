@@ -47,6 +47,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -179,6 +180,7 @@
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\UsuarioXRolController.cs" />
     <Compile Include="Controllers\VehiculoController.cs" />
+    <Compile Include="Filters\VerifySession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -339,6 +341,7 @@
     <Content Include="Views\UsuarioXRol\Details.cshtml" />
     <Content Include="Views\UsuarioXRol\Edit.cshtml" />
     <Content Include="Views\UsuarioXRol\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

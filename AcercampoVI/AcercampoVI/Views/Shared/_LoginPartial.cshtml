@@ -15,8 +15,13 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrarse", "Create", "Usuarios", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+<ul class="nav navbar-nav navbar-right">
+    @*<li>@Html.ActionLink("Registrarse", "Create", "Usuarios", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+    <li>@Html.ActionLink("Registro", "register", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("Volver", "login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Registro</button>*@
+
+
+
+</ul>
 }
